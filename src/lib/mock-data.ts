@@ -1,0 +1,182 @@
+import { Column, User } from "@/types";
+
+export const users: User[] = [
+  {
+    id: "user1",
+    name: "John Doe",
+  },
+  {
+    id: "user2",
+    name: "Jane Smith",
+  },
+  {
+    id: "user3",
+    name: "Bob Wilson",
+  },
+];
+
+export const columns: Column[] = [
+  {
+    id: "open",
+    title: "Open",
+    tasks: [
+      {
+        id: "5283",
+        title: "Performance optimization",
+        description: "Optimize application performance and reduce bundle size",
+        assignee: users[1],
+        storyPoints: 5,
+        startDate: new Date("2025-01-15"),
+        endDate: new Date("2025-01-22"),
+        status: "open",
+      },
+      {
+        id: "8472",
+        title: "Data visualization",
+        description: "Add charts and graphs for analytics dashboard",
+        assignee: users[1],
+        storyPoints: 8,
+        startDate: new Date("2025-01-10"),
+        endDate: new Date("2025-01-20"),
+        status: "open",
+      },
+      {
+        id: "9384",
+        title: "User settings page",
+        description: "Create user profile and settings management page",
+        assignee: users[2],
+        storyPoints: 5,
+        startDate: new Date("2025-01-18"),
+        endDate: new Date("2025-01-25"),
+        status: "open",
+      },
+      {
+        id: "1458",
+        title: "Security review",
+        description: "Perform security audit and fix vulnerabilities",
+        assignee: users[1],
+        storyPoints: 8,
+        startDate: new Date("2025-01-12"),
+        status: "open",
+      },
+    ],
+  },
+  {
+    id: "in-progress",
+    title: "In Progress",
+    tasks: [
+      {
+        id: "1258",
+        title: "Implement authentication",
+        description: "Set up user authentication using NextAuth.js",
+        assignee: users[0],
+        storyPoints: 5,
+        startDate: new Date("2025-01-08"),
+        endDate: new Date("2025-01-15"),
+        status: "in-progress",
+      },
+      {
+        id: "2589",
+        title: "Design system implementation",
+        description: "Create reusable components using Radix UI",
+        assignee: users[1],
+        storyPoints: 8,
+        startDate: new Date("2025-01-14"),
+        endDate: new Date("2025-01-23"),
+        status: "in-progress",
+      },
+      {
+        id: "7894",
+        title: "Error handling",
+        description: "Implement global error handling and error boundaries",
+        assignee: users[0],
+        storyPoints: 3,
+        startDate: new Date("2025-01-16"),
+        endDate: new Date("2025-01-20"),
+        status: "in-progress",
+      },
+      {
+        id: "1123",
+        title: "Email notifications",
+        description: "Set up email notification system for user actions",
+        assignee: users[1],
+        storyPoints: 5,
+        startDate: new Date("2025-01-12"),
+        status: "in-progress",
+      },
+      {
+        id: "1357",
+        title: "Accessibility audit",
+        description: "Ensure application meets WCAG 2.1 guidelines",
+        assignee: users[0],
+        storyPoints: 5,
+        startDate: new Date("2025-01-05"),
+        status: "in-progress",
+      },
+    ],
+  },
+  {
+    id: "in-review",
+    title: "In Review",
+    tasks: [
+      {
+        id: "3692",
+        title: "API integration",
+        description: "Integrate backend APIs with frontend",
+        assignee: users[2],
+        storyPoints: 3,
+        startDate: new Date("2025-01-05"),
+        endDate: new Date("2025-01-10"),
+        status: "in-review",
+      },
+      {
+        id: "1234",
+        title: "Documentation",
+        description: "Write technical documentation and API references",
+        assignee: users[2],
+        storyPoints: 3,
+        startDate: new Date("2025-01-15"),
+        endDate: new Date("2025-01-19"),
+        status: "in-review",
+      },
+    ],
+  },
+  {
+    id: "done",
+    title: "Done",
+    tasks: [
+      {
+        id: "4567",
+        title: "Unit testing",
+        description: "Write unit tests for core components",
+        assignee: users[0],
+        storyPoints: 5,
+        startDate: new Date("2025-01-03"),
+        endDate: new Date("2025-01-10"),
+        status: "done",
+      },
+      {
+        id: "6543",
+        title: "Mobile responsiveness",
+        description: "Ensure all components work properly on mobile devices",
+        assignee: users[2],
+        storyPoints: 8,
+        startDate: new Date("2025-01-08"),
+        endDate: new Date("2025-01-15"),
+        status: "done",
+      },
+      {
+        id: "1029",
+        title: "Search functionality",
+        description: "Implement global search with filters and sorting",
+        assignee: users[0],
+        storyPoints: 8,
+        startDate: new Date("2025-01-04"),
+        status: "done",
+      },
+    ],
+  },
+];
+
+// Helper function to get all tasks
+export const getAllTasks = () => columns.flatMap((column) => column.tasks);
