@@ -14,6 +14,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Suspense } from "react";
 
 export default function Page() {
   return (
@@ -45,7 +46,9 @@ export default function Page() {
           </ScrollArea>
         </SidebarInset>
       </SidebarProvider>
-      <TaskModal />
+      <Suspense>
+        <TaskModal />
+      </Suspense>
     </>
   );
 }

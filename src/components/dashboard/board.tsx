@@ -1,6 +1,6 @@
 "use client";
 
-import { Task, TaskStatus } from "@/types";
+import { Task } from "@/types";
 import { useTaskStore } from "@/lib/store";
 import { useEffect, useMemo, useState } from "react";
 import {

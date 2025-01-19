@@ -44,18 +44,14 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
     const { columns } = get();
 
     // Find the task in any column
-    let task: Task | undefined;
-    let sourceColumn: Column | undefined;
-    let targetColumn: Column | undefined;
-
-    sourceColumn = columns.find((col) =>
+    const sourceColumn = columns.find((col) =>
       col.tasks.some((t) => t.id === taskId),
     );
-    targetColumn = columns.find((col) => col.id === newStatus);
+    const targetColumn = columns.find((col) => col.id === newStatus);
 
     if (!sourceColumn || !targetColumn) return;
 
-    task = sourceColumn.tasks.find((t) => t.id === taskId);
+    const task = sourceColumn.tasks.find((t) => t.id === taskId);
     if (!task) return;
 
     // Create new task with updated status
